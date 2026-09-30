@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">IKA-Biskuat</string>
+    <string name="btn_my_project">My Project</string>
+    <string name="badge_snack">Biskuit Gandum &amp; Susu</string>
+    <string name="snack_title">Biskuat Original</string>
+    <string name="snack_description">Biskuat Original adalah biskuit renyah bernutrisi yang diformulasikan dengan kebaikan gandum dan susu, diperkaya 9 vitamin dan 6 mineral untuk dukung energi harian dan semangat sang juara.</string>
+
+    <string name="header_nutrisi">Kandungan Gizi Utama (Per 20g)</string>
+    <string name="header_vitamin">Vitamin &amp; Mineral Esensial</string>
+    <string name="content_vitamin">• Kalsium: 15% AKG\n• Zat Besi: 10% AKG\n• Vitamin B1, B2, B3, B6, B12: 10% AKG\n• Natrium / Garam: 70 mg (5% AKG)\n• Gula: 4 gram</string>
+
+    <string name="header_komposisi">Komposisi Bahan</string>
+    <string name="content_komposisi">Tepung terigu, minyak nabati, gula, susu bubuk skim, ekstrak malt, garam, pengembang, perisa sintetik, premiks vitamin dan mineral.</string>
+</resources>

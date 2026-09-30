@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="biskuat_red">#D32F2F</color>
+    <color name="biskuat_dark">#B71C1C</color>
+    <color name="biskuat_gold">#FFB300</color>
+    <color name="biskuat_gold_light">#FFF8E1</color>
+    <color name="biskuat_bg">#F8F9FA</color>
+    <color name="card_white">#FFFFFF</color>
+
+    <color name="text_title">#1A1A1A</color>
+    <color name="text_body">#4A4A4A</color>
+    <color name="text_muted">#757575</color>
+</resources>
