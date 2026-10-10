@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Basic Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="card_white">#FFFFFF</color> <!-- TAMBAHKAN INI -->
 
+    <!-- SEMAWIT Theme Colors -->
+    <color name="semawit_green">#0E723B</color>
+    <color name="semawit_btn_green">#007934</color>
+    <color name="semawit_btn_light">#D6E8DB</color>
+    <color name="semawit_light_green">#E8F5E9</color>
+    <color name="surface_base">#EEFFF3</color>
+
+    <!-- Green Shades -->
+    <color name="green_50">#EBF6F1</color>
+    <color name="green_500">#08944A</color>
+    <color name="green_700">#066834</color>
+
+    <!-- Accent Colors -->
+    <color name="gold_500">#D9A521</color>
+    <color name="blue_500">#1E6FFF</color>
+
+    <!-- Biskuat Project Theme Colors -->
     <color name="biskuat_red">#D32F2F</color>
     <color name="biskuat_dark">#B71C1C</color>
     <color name="biskuat_gold">#FFB300</color>
     <color name="biskuat_gold_light">#FFF8E1</color>
-    <color name="biskuat_bg">#F8F9FA</color>
-    <color name="card_white">#FFFFFF</color>
+    <color name="biskuat_bg">#F8F9FA</color> <!-- SUDAH ADA -->
 
+    <!-- Typography & Text Colors -->
+    <color name="text_primary">#0B3D2E</color>
     <color name="text_title">#1A1A1A</color>
+    <color name="text_dark">#1F2937</color>
     <color name="text_body">#4A4A4A</color>
+    <color name="text_gray">#6B7280</color>
     <color name="text_muted">#757575</color>
+    <color name="text_muted1">#6E8F7C</color>
+
 </resources>

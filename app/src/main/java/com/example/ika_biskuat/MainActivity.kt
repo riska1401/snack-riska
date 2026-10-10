@@ -12,15 +12,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Menggunakan ViewBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Berpindah activity menggunakan Intent ketika tombol ditekan
+        // Tombol 1: Ke Onboarding
+        binding.btnStartOnboarding.setOnClickListener {
+            startActivity(Intent(this, Onboarding1Activity::class.java))
+        }
+
+        // Tombol 2: Ke Project Lama
         binding.btnMyProject.setOnClickListener {
-            val intent = Intent(this, DetailBiskuatActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, DetailBiskuatActivity::class.java))
+        }
+
+        // Tombol 3: Ke Halaman Web
+        binding.btnOpenWeb.setOnClickListener {
+            startActivity(Intent(this, WebActivity::class.java))
         }
     }
 }
