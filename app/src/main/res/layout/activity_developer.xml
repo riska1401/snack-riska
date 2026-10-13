@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_base"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarDev"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/semawit_green"
+        app:title="Tentang Pembuat"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Header Profil -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="12dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="65dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="@color/semawit_green"
+                    app:strokeWidth="3dp">
+
+                    <ImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="Foto Profil"
+                        android:paddingTop="47dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/fotoku" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:text="Riska Anjani"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:text="Teknik Informatika • Politeknik Caltex Riau"
+                    android:textColor="@color/text_muted1"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Card Informasi Utama -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#E0E0E0"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Biografi -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Biografi Singkat"
+                        android:textColor="@color/semawit_green"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Mahasiswa aktif Teknik Informatika yang fokus mendalami pengembangan aplikasi mobile &amp; web, serta pembuatan aset 3D."
+                        android:textColor="@color/text_body"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="14dp"
+                        android:background="#F0F0F0" />
+
+                    <!-- Hobi & Minat -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Hobi &amp; Minat"
+                        android:textColor="@color/semawit_green"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:lineSpacingExtra="4dp"
+                        android:text="• 3D Modeling &amp; Rendering menggunakan Blender\n• Eksplorasi Desain UI/UX di Figma\n• Ngoding dan Debugging Aplikasi Web/Mobile"
+                        android:textColor="@color/text_body"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="14dp"
+                        android:background="#F0F0F0" />
+
+                    <!-- Kekuatan & Keahlian -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Kekuatan &amp; Keahlian"
+                        android:textColor="@color/semawit_green"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Memiliki ketelitian tinggi dalam debugging kode program, cepat beradaptasi dengan teknologi baru, dan terbiasa merancang antarmuka yang rapi."
+                        android:textColor="@color/text_body"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="14dp"
+                        android:background="#F0F0F0" />
+
+                    <!-- Kontak & Sosial -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Kontak &amp; Sosial"
+                        android:textColor="@color/semawit_green"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsregular"
+                        android:lineSpacingExtra="4dp"
+                        android:text="GitHub / IG: @riska_anjani\nEmail: riska@student.pcr.ac.id"
+                        android:textColor="@color/text_body"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IKABiskuat">
 
-        <!-- Halaman 1: Splash Screen (Layar Awal) -->
+        <!-- 1. Splash Screen (Layar Awal) -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -24,25 +24,36 @@
             </intent-filter>
         </activity>
 
-        <!-- Halaman 2: Main Activity -->
+        <!-- 2. Auth Activity (Halaman Login) -->
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 3. Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Halaman 3: Onboarding 1 -->
+        <!-- 4. Onboarding 1 -->
         <activity
             android:name=".Onboarding1Activity"
             android:exported="false" />
 
-        <!-- Halaman 4: Onboarding 2 -->
+        <!-- 5. Onboarding 2 -->
         <activity
             android:name=".Onboarding2Activity"
             android:exported="false" />
 
-        <!-- Halaman 5: Web Activity -->
+        <!-- 6. Web Activity -->
         <activity
             android:name=".WebActivity"
+            android:exported="false" />
+
+        <!-- 7. Profil Developer -->
+        <activity
+            android:name=".DeveloperActivity"
             android:exported="false" />
 
         <!-- Detail Biskuat (Project Lama) -->
