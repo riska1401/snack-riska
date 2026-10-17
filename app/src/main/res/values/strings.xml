@@ -11,4 +11,6 @@
 
     <string name="header_komposisi">Komposisi Bahan</string>
     <string name="content_komposisi">Tepung terigu, minyak nabati, gula, susu bubuk skim, ekstrak malt, garam, pengembang, perisa sintetik, premiks vitamin dan mineral.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
