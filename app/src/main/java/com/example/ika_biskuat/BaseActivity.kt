@@ -19,10 +19,12 @@ class BaseActivity : AppCompatActivity() {
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set HomeFragment sebagai layar default saat aplikasi dibuka
-        replaceFragment(HomeFragment())
+        // Set HomeFragment sebagai tampilan default saat pertama kali dibuka
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
+        }
 
-        // Listener klik ikon Bottom Navigation
+        // Listener untuk pindah fragment lewat Bottom Navigation
         binding.bottomNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
@@ -50,10 +52,15 @@ class BaseActivity : AppCompatActivity() {
         }
     }
 
-    // Fungsi pembantu untuk mengganti Fragment di container
-    private fun replaceFragment(fragment: Fragment) {
+    // Fungsi untuk mengganti fragment di container
+    fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
             .commit()
+    }
+
+    // Fungsi untuk mengubah pilihan ikon di Bottom Navigation secara otomatis
+    fun setSelectedBottomNavItem(itemId: Int) {
+        binding.bottomNavView.selectedItemId = itemId
     }
 }

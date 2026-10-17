@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.ika_biskuat.BaseActivity
 import com.example.ika_biskuat.Onboarding1Activity
 import com.example.ika_biskuat.R
 import com.example.ika_biskuat.WebActivity
 import com.example.ika_biskuat.databinding.FragmentCategoriesBinding
-import com.example.ika_biskuat.home.HomeFragment
 import com.example.ika_biskuat.pertemuan3.DetailBiskuatActivity
 
 class CategoriesFragment : Fragment() {
@@ -30,7 +30,7 @@ class CategoriesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Input Panen (Numpad)
+        // 1. Input Panen
         binding.btnInputPanen.setOnClickListener {
             Toast.makeText(requireContext(), "Membuka Form Input Panen SEMAWIT", Toast.LENGTH_SHORT).show()
         }
@@ -54,18 +54,15 @@ class CategoriesFragment : Fragment() {
         binding.btnDataLahan.setOnClickListener {
             Toast.makeText(requireContext(), "Lahan Kebun SEMAWIT: 2 Hektar", Toast.LENGTH_SHORT).show()
         }
-        binding.btnBack.setOnClickListener {
-            // Berpindah langsung ke halaman Home (menggunakan NavController atau FragmentManager sesuai navigasi projectmu)
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomeFragment()) // Ganti HomeFragment() dengan nama class Home kamu jika berbeda
-                .commit()
-        }
 
+        // 6. Tombol Back Kembali ke Home
+        binding.btnBack.setOnClickListener {
+            (requireActivity() as? BaseActivity)?.setSelectedBottomNavItem(R.id.nav_home)
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }

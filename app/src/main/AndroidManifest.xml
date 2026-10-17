@@ -14,56 +14,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IKABiskuat">
 
-        <!-- 1. Splash Screen (Layar Awal & Launcher) -->
+        <!-- 1. Splash Screen (Launcher) -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- 2. Auth Activity (Halaman Login) -->
+        <!-- 2. Auth Activity -->
         <activity
             android:name=".AuthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- 3. Base Activity (Container Utama Bottom Navigation SEMAWIT) -->
+        <!-- 3. Base Activity (Container Utama Bottom Navigation) -->
         <activity
             android:name=".BaseActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- 4. Main Activity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <!-- 5. Onboarding 1 -->
+        <!-- 4. Onboarding Activities -->
         <activity
             android:name=".Onboarding1Activity"
             android:exported="false" />
 
-        <!-- 6. Onboarding 2 -->
         <activity
             android:name=".Onboarding2Activity"
             android:exported="false" />
 
-        <!-- 7. Web Activity -->
+        <!-- 5. Web Activity -->
         <activity
             android:name=".WebActivity"
             android:exported="false" />
 
-        <!-- 8. Profil Developer -->
+        <!-- 6. Profil Developer -->
         <activity
             android:name=".DeveloperActivity"
             android:exported="false" />
 
-        <!-- 9. Detail Biskuat (Project Lama) -->
+        <!-- 7. Detail Biskuat -->
         <activity
             android:name=".pertemuan3.DetailBiskuatActivity"
             android:exported="false" />
