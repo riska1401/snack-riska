@@ -17,4 +17,17 @@ class TransactionFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_transaction, container, false)
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Tombol kembali diarahkan ke Home
+        val btnBack = view.findViewById<View>(R.id.btnBack)
+        btnBack?.setOnClickListener {
+            // Jika menggunakan FragmentManager manual:
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, com.example.ika_biskuat.home.HomeFragment()) // Ganti dengan class Home Fragment kamu
+                .commit()
+        }
+    }
 }
