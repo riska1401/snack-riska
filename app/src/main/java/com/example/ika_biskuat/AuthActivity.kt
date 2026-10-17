@@ -16,31 +16,30 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inisialisasi SharedPreferences di dalam onCreate
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
+            // Validasi: Username dan Password harus diisi dan nilainya sama
             if (username.isNotEmpty() && username == password) {
-                // Simpan status isLogin ke SharedPreferences
+                // Simpan Sesi Login di SharedPreferences
+                val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
                 editor.apply()
 
-                Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Login Berhasil! Selamat Datang $username", Toast.LENGTH_SHORT).show()
 
-                // Pindah ke MainActivity
-                val intent = Intent(this, MainActivity::class.java)
+                // Pindah ke BaseActivity (Container Utama dengan Bottom Navigation SEMAWIT)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
-                finish()
+                finish() // Menutup AuthActivity
             } else {
-                // Tampilkan AlertDialog jika gagal
+                // Tampilkan Dialog Peringatan Jika Login Gagal
                 AlertDialog.Builder(this)
                     .setTitle("Login Gagal")
-                    .setMessage("Username dan Password tidak sesuai. Silahkan coba lagi")
+                    .setMessage("Username dan Password tidak sesuai! Harap periksa kembali.")
                     .setPositiveButton("OK") { dialog, _ ->
                         dialog.dismiss()
                     }
