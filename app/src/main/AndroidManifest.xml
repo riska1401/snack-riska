@@ -20,6 +20,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -40,7 +41,6 @@
         <activity
             android:name=".Onboarding1Activity"
             android:exported="false" />
-
         <activity
             android:name=".Onboarding2Activity"
             android:exported="false" />
@@ -59,7 +59,18 @@
         <activity
             android:name=".pertemuan3.DetailBiskuatActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".RegisterGmailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".RegisterSuccessActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
