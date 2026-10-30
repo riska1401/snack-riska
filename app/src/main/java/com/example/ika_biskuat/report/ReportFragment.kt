@@ -39,12 +39,35 @@ class ReportFragment : Fragment() {
         selectedDateStr = String.format("%04d-%02d-%02d", calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH))
         binding.tvSelectedDate.text = "Periode: $selectedDateStr"
 
-        // Listener Kalender Interaktif
+        // 1. Listener Kalender Interaktif
         binding.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             selectedDateStr = String.format("%04d-%02d-%02d", year, month + 1, dayOfMonth)
             binding.tvSelectedDate.text = "Periode: $selectedDateStr"
-            Toast.makeText(requireContext(), "Tanggal dipilih: $selectedDateStr", Toast.LENGTH_SHORT).show()
         }
+
+        // 2. Aksi Tombol Ekspor PDF
+        binding.btnExportPdf.setOnClickListener {
+            generatePdfReport()
+        }
+    }
+
+    private fun generatePdfReport() {
+        val headers = listOf("Tanggal", "Kategori", "Keterangan", "Jumlah")
+        val dataRows = listOf(
+            listOf(selectedDateStr, "Panen TBS", "Blok A Utama", "2500 Kg"),
+            listOf(selectedDateStr, "Pupuk NPK", "Subsidi KUD", "Rp 500k"),
+            listOf(selectedDateStr, "Panen TBS", "Blok B", "1800 Kg")
+        )
+
+        PdfExporter.exportToPdf(
+            context = requireContext(),
+            fileName = "Laporan_SEMAWIT_$selectedDateStr",
+            title = "LAPORAN KEBUN SEMAWIT ($selectedDateStr)",
+            headers = headers,
+            dataRows = dataRows
+        )
+
+        Toast.makeText(requireContext(), "PDF Berhasil Diekspor untuk tanggal $selectedDateStr!", Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {
