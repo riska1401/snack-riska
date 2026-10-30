@@ -22,12 +22,12 @@ object PdfExporter {
         val titlePaint = Paint().apply {
             color = Color.BLACK
             textSize = 18f
-            isBoldText = true
+            isFakeBoldText = true // Diperbaiki dari isBoldText
         }
         val headerPaint = Paint().apply {
             color = Color.DKGRAY
             textSize = 12f
-            isBoldText = true
+            isFakeBoldText = true // Diperbaiki dari isBoldText
         }
         val rowPaint = Paint().apply {
             color = Color.BLACK
@@ -41,9 +41,11 @@ object PdfExporter {
         var startY = 50f
         val startX = 40f
 
+        // Menggambar Judul Dokumen
         canvas.drawText(title, startX, startY, titlePaint)
         startY += 30f
 
+        // Menggambar Header Tabel
         var startXCol = startX
         val colWidths = floatArrayOf(100f, 110f, 180f, 110f)
         for (i in headers.indices) {
@@ -55,6 +57,7 @@ object PdfExporter {
         canvas.drawLine(startX, startY, startX + 500f, startY, linePaint)
         startY += 20f
 
+        // Menggambar Baris Data Tabel
         for (row in dataRows) {
             startXCol = startX
             for (i in row.indices) {
@@ -67,6 +70,7 @@ object PdfExporter {
         pdfDocument.finishPage(page)
 
         try {
+            // Menyimpan file PDF ke dalam direktori cache aplikasi
             val exportDir = File(context.cacheDir, "exports")
             if (!exportDir.exists()) exportDir.mkdirs()
 
@@ -76,6 +80,7 @@ object PdfExporter {
             pdfDocument.close()
             fos.close()
 
+            // Memanggil fungsi untuk membagikan file PDF
             sharePdfFile(context, file)
         } catch (e: Exception) {
             e.printStackTrace()
