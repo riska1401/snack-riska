@@ -52,48 +52,83 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <!-- KARTU BINGKAI KALENDER -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Filter &amp; Ekspor Laporan"
+                    android:textColor="#0C6237"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- KARTU FILTER PERIODE -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="0dp"
-                    app:strokeColor="#333333"
+                    app:strokeColor="#E0E0E0"
                     app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="16dp">
+                        android:padding="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pilih Tanggal Laporan"
-                            android:textColor="#111111"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+                            android:text="Periode Tanggal Laporan"
+                            android:textColor="#555555"
+                            android:textSize="13sp" />
 
-                        <!-- KOMPONEN KALENDER FISIK DI LAYAR -->
-                        <CalendarView
-                            android:id="@+id/calendarView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:background="@color/white" />
-
-                        <!-- Teks Status Tanggal Terpilih -->
+                        <!-- Teks Tanggal yang Dipilih (Besar & Jelas) -->
                         <TextView
                             android:id="@+id/tvSelectedDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="Periode: Semua Tanggal"
-                            android:textColor="#444444"
-                            android:textSize="13sp"
+                            android:layout_marginTop="6dp"
+                            android:text="2026-10-16"
+                            android:textColor="#0C6237"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
+
+                        <!-- TOMBOL BUKA KALENDER (DIALOG) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btnSelectDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardBackgroundColor="@color/semawit_btn_green"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="14dp">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@android:drawable/ic_menu_my_calendar"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:text="Pilih Tanggal Lain"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -105,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     app:cardBackgroundColor="@color/semawit_btn_green"
-                    app:cardCornerRadius="12dp"
+                    app:cardCornerRadius="16dp"
                     app:cardElevation="2dp"
                     app:strokeWidth="0dp">
 
@@ -114,21 +149,21 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="horizontal"
-                        android:padding="14dp">
+                        android:padding="16dp">
 
                         <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:src="@android:drawable/ic_menu_save"
                             app:tint="@color/white" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
+                            android:layout_marginStart="10dp"
                             android:text="Ekspor Laporan PDF"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
