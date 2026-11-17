@@ -11,63 +11,165 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- HEADER HIJAU ATAS -->
-        <RelativeLayout
+        <!-- HEADER HIJAU + RINGKASAN SALDO -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:paddingHorizontal="20dp"
-            android:paddingTop="20dp"
+            android:paddingTop="24dp"
             android:paddingBottom="24dp">
 
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:focusable="true"
-                android:padding="4dp"
-                android:src="@android:drawable/ic_menu_revert"
-                app:tint="@color/white" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppinsbold"
+                    android:text="Categories"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnNotification"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_popup_reminder"
+                        app:tint="@color/text_primary" />
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+
+            <!-- Ringkasan Sinking Fund & Total Keluar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="↗ Total Sinking Fund"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Rp 7.000.000"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="34dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="#66FFFFFF" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsregular"
+                        android:text="↘ Total Keluar"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Rp 5.250.000"
+                        android:textColor="#FFD54F"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Progress Bar 30% -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_input_pill"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="78dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_input_pill"
+                    android:backgroundTint="#052E1B"
+                    android:fontFamily="@font/poppinsbold"
+                    android:gravity="center"
+                    android:text="30%"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppinsbold"
+                    android:gravity="end|center_vertical"
+                    android:paddingEnd="14dp"
+                    android:text="20.000.00"
+                    android:textColor="@color/text_primary"
+                    android:textSize="10sp" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Categories"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="☑ Auto-Splitting: 30% Pupuk, 10% Racun, 60% Bersih"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="11sp" />
+        </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/btnNotification"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                app:cardBackgroundColor="#E8F5E9"
-                app:cardCornerRadius="19dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="Notification"
-                    android:scaleType="fitCenter"
-                    android:src="@android:drawable/ic_popup_reminder"
-                    app:tint="#0C6237" />
-            </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
-
-        <!-- KONTEN PUTIH TOP ROUNDED (GRID FITUR ASLI SEMAWIT) -->
+        <!-- PANEL KONTEN BAWAH GRID 3x3 -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardBackgroundColor="#F2F8F4"
+            app:cardBackgroundColor="@color/surface_base"
+            app:cardElevation="0dp"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.TopRounded"
             app:strokeWidth="0dp">
 
@@ -75,118 +177,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="3"
-                android:padding="16dp"
+                android:padding="20dp"
                 android:rowCount="3">
 
-                <!-- 1. Panduan Onboarding -->
-                <LinearLayout
-                    android:id="@+id/btnToOnboarding"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="#E5A000"
-                        app:cardCornerRadius="20dp"
-                        app:strokeWidth="0dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:layout_gravity="center"
-                            android:src="@android:drawable/ic_menu_compass"
-                            app:tint="@color/white" />
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Panduan\nOnboarding"
-                        android:textAlignment="center"
-                        android:textColor="#111111"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- 2. Web Portal SEMAWIT -->
-                <LinearLayout
-                    android:id="@+id/btnToWeb"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="#E5A000"
-                        app:cardCornerRadius="20dp"
-                        app:strokeWidth="0dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:layout_gravity="center"
-                            android:src="@android:drawable/ic_menu_mapmode"
-                            app:tint="@color/white" />
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Web Portal\nSEMAWIT"
-                        android:textAlignment="center"
-                        android:textColor="#111111"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- 3. Detail Info Pupuk & KUD -->
-                <LinearLayout
-                    android:id="@+id/btnToDetail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="8dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="#E5A000"
-                        app:cardCornerRadius="20dp"
-                        app:strokeWidth="0dp">
-
-                        <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:layout_gravity="center"
-                            android:src="@android:drawable/ic_menu_info_details"
-                            app:tint="@color/white" />
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Detail Info\nPupuk &amp; KUD"
-                        android:textAlignment="center"
-                        android:textColor="#111111"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <!-- 4. Form Input Panen -->
+                <!-- 1. Input Panen (ID Lama: btnInputPanen) -->
                 <LinearLayout
                     android:id="@+id/btnInputPanen"
                     android:layout_width="0dp"
@@ -197,32 +191,32 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="#E5A000"
-                        app:cardCornerRadius="20dp"
-                        app:strokeWidth="0dp">
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        app:cardBackgroundColor="@color/gold_tile_bg"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp">
 
                         <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
                             android:layout_gravity="center"
                             android:src="@android:drawable/ic_menu_sort_by_size"
-                            app:tint="@color/white" />
+                            app:tint="@color/text_primary" />
                     </com.google.android.material.card.MaterialCardView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="Input Panen\n(Numpad)"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Input Panen"
                         android:textAlignment="center"
-                        android:textColor="#111111"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp" />
                 </LinearLayout>
 
-                <!-- 5. Informasi Lahan -->
+                <!-- 2. Data Lahan (ID Lama: btnDataLahan) -->
                 <LinearLayout
                     android:id="@+id/btnDataLahan"
                     android:layout_width="0dp"
@@ -233,17 +227,53 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="#E5A000"
-                        app:cardCornerRadius="20dp"
-                        app:strokeWidth="0dp">
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        app:cardBackgroundColor="@color/gold_tile_bg"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp">
 
                         <ImageView
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
                             android:layout_gravity="center"
-                            android:src="@android:drawable/ic_menu_today"
+                            android:src="@android:drawable/ic_dialog_map"
+                            app:tint="@color/text_primary" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Data Lahan"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- 3. Web Portal / KUD Mitra (ID Lama: btnToWeb) -->
+                <LinearLayout
+                    android:id="@+id/btnToWeb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        app:cardBackgroundColor="@color/gold_tile_bg"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_gravity="center"
+                            android:src="@android:drawable/ic_menu_mapmode"
                             app:tint="@color/white" />
                     </com.google.android.material.card.MaterialCardView>
 
@@ -251,12 +281,121 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="Informasi\nLahan Kebun"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="KUD Mitra"
                         android:textAlignment="center"
-                        android:textColor="#111111"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp" />
                 </LinearLayout>
+
+                <!-- 4. Detail Info Pupuk (ID Lama: btnToDetail) -->
+                <LinearLayout
+                    android:id="@+id/btnToDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        app:cardBackgroundColor="@color/gold_tile_bg"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_gravity="center"
+                            android:src="@android:drawable/ic_menu_info_details"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Catalog\nPupuk"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- 5. Panduan Onboarding (ID Lama: btnToOnboarding) -->
+                <LinearLayout
+                    android:id="@+id/btnToOnboarding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        app:cardBackgroundColor="@color/gold_tile_bg"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_gravity="center"
+                            android:src="@android:drawable/ic_menu_compass"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="Panduan\nApp"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- 6. More (+) -->
+                <LinearLayout
+                    android:id="@+id/btnMoreCategories"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        app:cardBackgroundColor="@color/gold_tile_bg"
+                        app:cardCornerRadius="22dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_gravity="center"
+                            android:src="@android:drawable/ic_input_add"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppinsbold"
+                        android:text="More"
+                        android:textAlignment="center"
+                        android:textColor="@color/text_primary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
             </GridLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
