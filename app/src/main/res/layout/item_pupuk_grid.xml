@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="165dp"
+    app:cardBackgroundColor="@color/semawit_green_dark"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/ivPupukImage"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:src="@drawable/logosemawit" />
+
+        <TextView
+            android:id="@+id/tvPupukHarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Rp 450.000 / sak"
+            android:textColor="#E8F5E9"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvPupukNama"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_input_pill"
+            android:backgroundTint="@color/gold_tile_bg"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:text="Pupuk NPK"
+            android:textColor="@color/text_primary"
+            android:textSize="11sp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
