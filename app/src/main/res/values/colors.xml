@@ -3,14 +3,18 @@
     <!-- Basic Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="card_white">#FFFFFF</color> <!-- TAMBAHKAN INI -->
+    <color name="card_white">#FFFFFF</color>
 
-    <!-- SEMAWIT Theme Colors -->
+    <!-- SEMAWIT Theme Colors (Updated sesuai Figma) -->
     <color name="semawit_green">#0C6237</color>
-    <color name="semawit_btn_green">#007934</color>
-    <color name="semawit_btn_light">#D6E8DB</color>
+    <color name="semawit_green_dark">#084727</color>
+    <color name="semawit_btn_green">#0C6237</color>
+    <color name="semawit_btn_light">#E2F3E7</color>
     <color name="semawit_light_green">#E8F5E9</color>
-    <color name="surface_base">#EEFFF3</color>
+    <color name="surface_base">#F3FFF6</color>
+    <color name="input_pill_bg">#E2F3E7</color>
+    <color name="gold_tile_bg">#E5A922</color>
+    <color name="blue_icon_bg">#2997FF</color>
 
     <!-- Green Shades -->
     <color name="green_50">#EBF6F1</color>
@@ -26,7 +30,7 @@
     <color name="biskuat_dark">#B71C1C</color>
     <color name="biskuat_gold">#FFB300</color>
     <color name="biskuat_gold_light">#FFF8E1</color>
-    <color name="biskuat_bg">#F8F9FA</color> <!-- SUDAH ADA -->
+    <color name="biskuat_bg">#F8F9FA</color>
 
     <!-- Typography & Text Colors -->
     <color name="text_primary">#0B3D2E</color>

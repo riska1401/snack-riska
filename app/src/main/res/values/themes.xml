@@ -1,29 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.IKABiskuat" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
-
+    <style name="Base.Theme.IKABiskuat" parent="Theme.Material3.DayNight.NoActionBar" />
     <style name="Theme.IKABiskuat" parent="Base.Theme.IKABiskuat" />
 
-    <style name="Theme.Ika_biskuat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/green_500</item>
-        <item name="colorPrimaryVariant">@color/green_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="android:windowBackground">@color/surface_base</item>
-    </style>
-
     <style name="TopRoundedCorner">
-        <item name="cornerSizeTopLeft">36dp</item>
-        <item name="cornerSizeTopRight">36dp</item>
+        <item name="cornerSizeTopLeft">44dp</item>
+        <item name="cornerSizeTopRight">44dp</item>
     </style>
 
     <style name="ShapeAppearance.TopRounded" parent="ShapeAppearance.Material3.Corner.None">
-        <item name="cornerSizeTopLeft">32dp</item>
-        <item name="cornerSizeTopRight">32dp</item>
+        <item name="cornerSizeTopLeft">44dp</item>
+        <item name="cornerSizeTopRight">44dp</item>
         <item name="cornerSizeBottomLeft">0dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
 
+    <!-- Style Indikator Aktif Bottom Nav -->
+    <style name="SemawitBottomNavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/semawit_green</item>
+        <item name="android:width">44dp</item>
+        <item name="android:height">44dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
+    </style>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4FBF7">
+    android:background="@color/surface_base">
 
     <!-- Container Utama untuk Mengganti Fragment -->
     <FrameLayout
@@ -15,14 +15,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Bottom Navigation Bar SEMAWIT -->
+    <!-- Bottom Navigation Bar SEMAWIT (Rounded Top & Pill Indicator) -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:itemIconTint="@color/semawit_green"
-        app:itemTextColor="@color/semawit_green"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_bottom_nav_rounded"
+        app:elevation="8dp"
+        app:itemActiveIndicatorStyle="@style/SemawitBottomNavIndicator"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@color/text_primary"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
