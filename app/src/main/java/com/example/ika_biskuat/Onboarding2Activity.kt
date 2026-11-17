@@ -14,9 +14,18 @@ class Onboarding2Activity : AppCompatActivity() {
         binding = ActivityOnboarding2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Klik tombol untuk lanjut ke WebActivity
         binding.btnNext2.setOnClickListener {
-            startActivity(Intent(this, WebActivity::class.java))
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+            sharedPref.edit().putBoolean("hasSeenOnboarding", true).apply()
+
+            val isLogin = sharedPref.getBoolean("isLogin", false)
+            val nextIntent = if (isLogin) {
+                Intent(this, BaseActivity::class.java)
+            } else {
+                Intent(this, AuthActivity::class.java)
+            }
+            startActivity(nextIntent)
+            finish()
         }
     }
 }

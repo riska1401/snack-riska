@@ -3,103 +3,121 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/semawit_green"
+    android:background="@drawable/bg_home_header_gradient"
     android:orientation="vertical">
 
-    <!-- Bagian Atas (Hijau Tua) -->
+    <!-- Bagian Atas (Hijau) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/tvWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsbold"
-            android:text="Welcome To\nSEMAWIT"
+            android:text="Selamat Datang di\nSEMAWIT"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="26sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Solusi Digital Manajemen Keuangan dan\nSinking Fund Petani Kelapa Sawit"
+            android:textAlignment="center"
+            android:textColor="#E8F5E9"
+            android:textSize="12sp" />
     </LinearLayout>
 
-    <!-- Bagian Bawah (Tanpa Drawable, Menggunakan ShapeableImageView sebagai Background) -->
-    <FrameLayout
+    <!-- Bagian Bawah (Melengkung) -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.8">
+        android:layout_weight="1.8"
+        app:cardBackgroundColor="@color/surface_base"
+        app:cardElevation="0dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.TopRounded"
+        app:strokeWidth="0dp">
 
-        <!-- Background Hijau Muda dengan Melengkung Atas Sahaja -->
-        <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F2FBF4"
-            app:shapeAppearanceOverlay="@style/TopRoundedCorner" />
-
-        <!-- Konten di Atas Background -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="28dp">
 
-            <!-- Logo SEMAWIT -->
             <ImageView
                 android:id="@+id/imgOnboarding"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:contentDescription="Logo SEMAWIT"
                 android:scaleType="fitCenter"
                 android:src="@drawable/logosemawit" />
 
-            <!-- Tombol Next -->
             <TextView
-                android:id="@+id/btnNext1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:clickable="true"
-                android:focusable="true"
+                android:layout_marginTop="18dp"
                 android:fontFamily="@font/poppinsbold"
-                android:padding="8dp"
-                android:text="Next"
-                android:textColor="#0E6B37"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="Auto-Splitting Hasil Panen"
+                android:textAlignment="center"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
 
-            <!-- Indikator Kotak/Kapsul -->
-            <!-- Indikator Bulat (Halaman 1 Aktif) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Setiap hasil timbangan TBS otomatis disisihkan 30% untuk Tabungan Pupuk, 10% Tabungan Racun, dan 60% Pendapatan Bersih."
+                android:textAlignment="center"
+                android:textColor="@color/text_body"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNext1"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/semawit_green"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Lanjut"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:cornerRadius="24dp" />
+
+            <!-- Indikator Halaman 1 Aktif -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_marginEnd="8dp"
-                    app:cardBackgroundColor="#00A859"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp"
-                    app:strokeWidth="0dp" />
+                    android:layout_width="22dp"
+                    android:layout_height="8dp"
+                    android:layout_marginEnd="6dp"
+                    app:cardBackgroundColor="@color/semawit_green"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp" />
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    app:cardBackgroundColor="#D0E8D7"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp"
-                    app:strokeWidth="0dp" />
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    app:cardBackgroundColor="#C8E6C9"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp" />
             </LinearLayout>
 
         </LinearLayout>
-    </FrameLayout>
-
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

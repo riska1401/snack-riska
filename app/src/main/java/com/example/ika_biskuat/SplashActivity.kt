@@ -16,7 +16,6 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Delay 2 detik untuk efek Splash Screen
         Handler(Looper.getMainLooper()).postDelayed({
             checkUserSession()
         }, 2000)
@@ -25,16 +24,14 @@ class SplashActivity : AppCompatActivity() {
     private fun checkUserSession() {
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         val isLogin = sharedPref.getBoolean("isLogin", false)
+        val hasSeenOnboarding = sharedPref.getBoolean("hasSeenOnboarding", false)
 
-        if (isLogin) {
-            // Jika sudah login, langsung buka BaseActivity (Bottom Navigation SEMAWIT)
-            val intent = Intent(this, BaseActivity::class.java)
-            startActivity(intent)
-        } else {
-            // Jika belum login, arahkan ke Halaman Auth/Login
-            val intent = Intent(this, AuthActivity::class.java)
-            startActivity(intent)
+        val intent = when {
+            !hasSeenOnboarding -> Intent(this, Onboarding1Activity::class.java)
+            isLogin -> Intent(this, BaseActivity::class.java)
+            else -> Intent(this, AuthActivity::class.java)
         }
-        finish() // Menutup SplashActivity agar tidak bisa di-back
+        startActivity(intent)
+        finish()
     }
 }
